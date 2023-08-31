@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Hardware Shop with Events In JS</title>
+</head>
+<style>
+    .container {
+        border: 2px solid black;
+        text-align: center;
+    }
+
+    .container3 {
+        border: 2px solid black;
+        text-align: center;
+    }
+
+    .container4 {
+        border: 2px solid black;
+        text-align: center;
+    }
+</style>
+<script>
+    function price() {
+        price1 = document.getElementById('hname').value;
+        //alert(price1);
+        document.getElementById('iid').value = price1;
+        document.getElementById('jid').disabled = false;
+
+    }
+
+    function calc() {
+
+        p = document.getElementById('iid').value;
+        q = document.getElementById('jid').value;
+
+        mul = p * q;
+
+        document.getElementById('kid').value = mul;
+
+        t = document.getElementById('lid').value;
+
+        ct = mul * t / 100;
+
+        gt = mul + ct;
+
+        document.getElementById('mid').value = gt;
+    }
+
+    function preview() {
+        name = document.getElementById('def').value;
+        add = document.getElementById('add').value;
+
+        prev = "<table border='1' align='center'><tr><td>Name:</td><td>" + name + "</td></tr><tr><td>Address:</td><td>" + add + "</td></tr></table>";
+
+        //alert('fdsfdsf');
+        document.getElementById('pr').innerHTML = prev;
+
+    }
+    function ClearThings() {
+        document.getElementById('add').value = "";
+        document.getElementById('def').value = "";
+        document.getElementById('mob').value = "";
+        document.getElementById('mail').value = "";
+        document.getElementById('piin').value = "";
+        // document.getElementById('boot').value="";
+        document.getElementById('hid').value = "";
+        document.getElementById('iid').value = "";
+        document.getElementById('jid').value = "";
+        document.getElementById('kid').value = "";
+        document.getElementById('lid').value = "";
+        document.getElementById('mid').value = "";
+        document.getElementById('cit').selectedIndex = 0;
+    }
+</script>
+
+<body>
+    <div class="container">
+        <h1>COMPUTER HARDWARE SHOP</h1>
+    </div>
+    <h2>Costomer Details</h2>
+    <hr>
+    <div class="container2">
+
+        Name:<input type="text" name="aname" id="def" onfocus="add.disabled=false">
+        Address:<input type="text" name="bname" id="add" disabled onfocus="mob.disabled=false"><br><br>
+        <div class="dropdown">
+            Mobile:<input type="number" name="cname" id="mob" disabled onfocus="mail.disabled=false">
+            <!-- City:<input type="text" name="dname" id="cit"> -->
+
+            <label for="cit">City:</label>
+            <select name="dname" id="cit">
+                <option value="select">Select a city</option>
+                <option value="newyork">New York</option>
+                <option value="london">London</option>
+                <option value="paris">Paris</option>
+                <option value="Sydney">Sydney</option>
+            </select>
+        </div><br>
+        Email:<input type="text" name="ename" id="mail" disabled onfocus="piin.disabled=false">
+        Pin:<input type="number" name="fname" id="piin" disabled onfocus="boot.disabled=false">
+    </div><br>
+    <input type="button" name="gbutton" id="boot" value="Next" disabled onfocus="hid.disabled=false">
+    <br><br>
+    <div class="container3">
+        <h1>SHOP</h1>
+    </div><br>
+    <div>
+
+        Part Name:<!-- <input type="text" name="hname" id="hid" disabled onfocus="iid.disabled=false"> -->
+        <select name="hname" id="hname" onchange="price()">
+            <option value="N.A">--Select--</option>
+            <option value="40000">Personal Computer</option>
+            <option value="30000">Laptop</option>
+            <option value="20000">Scanner</option>
+            <option value="10000">Mouse</option>
+        </select>
+    </div><br>
+    <div>
+        Price:<input type="number" name="iname" id="iid" readonly disabled>
+    </div><br>
+    <div>
+        Quantity:<input type="number" name="jname" id="jid" disabled onkeyup="calc()">
+
+    </div><br>
+    <div>
+        Total:<input type="number" name="kname" id="kid" disabled>
+    </div><br>
+    <div>
+        Tax:<input type="number" name="lname" id="lid" disabled value="18">%
+    </div><br>
+    <div>
+        Grand Total:<input type="number" name="mname" id="mid" readonly disabled>
+    </div><br>
+    <input type="button" name="nname" id="nid" value="Submit" onclick="preview()">
+    <input type="button" name="oname" id="oid" value="Clear" onclick="ClearThings()"> 
+</body>
+
+</html>
